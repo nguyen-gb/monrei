@@ -1,0 +1,852 @@
+/* 
+    MONREI SAIGON - Premium Landing Page Design
+    Author: Antigravity
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap');
+
+:root {
+    --primary: #CDA26E;
+    --primary-light: #E6C18D;
+    --secondary: #0B265D;
+    --secondary-dark: #051636;
+    --bg: #F8F9FA;
+    --text: #333333;
+    --text-muted: #666666;
+    --white: #ffffff;
+    --glass: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, .font-serif {
+    font-family: 'Playfair Display', serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Header --- */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 20px 0;
+    transition: var(--transition);
+}
+
+header.scrolled {
+    background: rgba(11, 38, 93, 0.85);
+    backdrop-filter: blur(10px);
+    padding: 10px 0;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 60px;
+    transition: var(--transition);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--white);
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transition);
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    transition: var(--transition);
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+.header-cta .btn {
+    padding: 12px 25px;
+    background: var(--primary);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: var(--transition);
+    box-shadow: 0 4px 15px rgba(205, 162, 110, 0.3);
+}
+
+.header-cta .btn:hover {
+    background: var(--primary-light);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(205, 162, 110, 0.4);
+}
+
+/* --- Hero --- */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('image/Monrei-Saigon-2-1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+    position: relative;
+}
+
+.hero-content {
+    max-width: 800px;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 72px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    animation: fadeInUp 1s ease-out;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+    font-weight: 300;
+    animation: fadeInUp 1.2s ease-out;
+}
+
+.hero .btn-group {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    animation: fadeInUp 1.4s ease-out;
+}
+
+.btn-primary {
+    padding: 15px 40px;
+    background: var(--primary);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.btn-outline {
+    padding: 15px 40px;
+    background: transparent;
+    color: var(--white);
+    text-decoration: none;
+    border: 1px solid var(--white);
+    border-radius: 5px;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.btn-outline:hover {
+    background: var(--white);
+    color: var(--secondary);
+}
+
+/* --- Section General --- */
+section {
+    padding: 100px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title h2 {
+    font-size: 48px;
+    color: var(--secondary);
+    margin-bottom: 10px;
+}
+
+.section-title .divider {
+    width: 80px;
+    height: 3px;
+    background: var(--primary);
+    margin: 0 auto;
+}
+
+/* --- Overview --- */
+.overview-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.overview-text h3 {
+    font-size: 32px;
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.overview-text p {
+    margin-bottom: 20px;
+    color: var(--text-muted);
+}
+
+.overview-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.stat-item h4 {
+    font-size: 36px;
+    color: var(--secondary);
+}
+
+.stat-item p {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.overview-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.image-caption {
+    margin-top: 15px;
+    font-size: 14px;
+    font-style: italic;
+    color: var(--text-muted);
+    text-align: center;
+}
+
+/* Project Info Table */
+.project-info-table {
+    margin-top: 30px;
+    border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.info-label {
+    font-weight: 600;
+    color: var(--secondary);
+    font-size: 14px;
+}
+
+.info-value {
+    color: var(--text-muted);
+    font-size: 14px;
+    text-align: right;
+}
+
+/* Why Choose Section */
+.why-choose {
+    background-color: var(--white);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+.feature-item {
+    text-align: center;
+    padding: 30px;
+    background: var(--bg);
+    border-radius: 15px;
+    transition: var(--transition);
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+}
+
+.feature-icon {
+    font-size: 32px;
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.feature-item h4 {
+    color: var(--secondary);
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.feature-item p {
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+/* --- Amenities --- */
+.amenities {
+    background: var(--secondary);
+    color: var(--white);
+}
+
+.amenities .section-title h2 {
+    color: var(--white);
+}
+
+.amenities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.amenity-card {
+    background: rgba(255,255,255,0.03);
+    border-radius: 15px;
+    border: 1px solid rgba(255,255,255,0.05);
+    transition: var(--transition);
+    overflow: hidden;
+    height: 100%;
+}
+
+.amenity-card:hover {
+    background: rgba(255,255,255,0.06);
+    transform: translateY(-10px);
+}
+
+.amenity-img {
+    height: 200px;
+    overflow: hidden;
+}
+
+.amenity-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.amenity-card:hover .amenity-img img {
+    transform: scale(1.1);
+}
+
+.amenity-info {
+    padding: 30px;
+    text-align: left;
+}
+
+.amenity-info h4 {
+    font-size: 22px;
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.amenity-info p {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* Infrastructure */
+.infrastructure {
+    background-color: var(--bg);
+}
+
+.infra-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+.infra-item {
+    background: var(--white);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: var(--transition);
+}
+
+.infra-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.infra-img {
+    height: 180px;
+    overflow: hidden;
+}
+
+.infra-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.infra-text {
+    padding: 25px;
+}
+
+.infra-text h4 {
+    color: var(--secondary);
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.infra-text p {
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+/* Floorplans & Products */
+.floor-intro {
+    max-width: 800px;
+    margin: 0 auto 50px;
+    text-align: center;
+    color: var(--text-muted);
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+    border: 1px solid rgba(0,0,0,0.03);
+    transition: var(--transition);
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+}
+
+.product-img {
+    height: 240px;
+    overflow: hidden;
+}
+
+.product-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.product-card:hover .product-img img {
+    transform: scale(1.1);
+}
+
+.product-info {
+    padding: 30px;
+}
+
+.product-info h4 {
+    color: var(--secondary);
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.product-info p {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 25px;
+}
+
+.btn-sm {
+    display: inline-block;
+    padding: 10px 25px;
+    background: transparent;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.btn-sm:hover {
+    background: var(--primary);
+    color: var(--white);
+}
+
+/* Gallery */
+.gallery {
+    background-color: var(--secondary-dark);
+    color: var(--white);
+}
+
+.gallery .section-title h2 {
+    color: var(--white);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 300px);
+    gap: 20px;
+}
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+    filter: grayscale(30%);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+    filter: grayscale(0%);
+}
+
+.gallery-cta {
+    margin-top: 50px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 250px);
+    }
+}
+.location-content {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 50px;
+}
+
+.location-details {
+    padding: 40px;
+    background: var(--white);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.location-item {
+    margin-bottom: 30px;
+}
+
+.location-item h5 {
+    font-size: 18px;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.location-map iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    min-height: 450px;
+}
+
+/* --- Contact --- */
+.contact {
+    background: url('image/bg-monrei-saigon.jpg');
+    background-size: cover;
+    position: relative;
+}
+
+.contact-overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(11, 38, 93, 0.9);
+}
+
+.contact .container {
+    position: relative;
+    z-index: 1;
+    color: var(--white);
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: var(--glass);
+    padding: 50px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 15px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 5px;
+    color: var(--white);
+    font-family: inherit;
+}
+
+.form-group input::placeholder, .form-group textarea::placeholder {
+    color: rgba(255,255,255,0.6);
+}
+
+.contact-form .btn {
+    width: 100%;
+    padding: 15px;
+    background: var(--primary);
+    border: none;
+    color: var(--white);
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+/* --- Footer --- */
+footer {
+    background: var(--secondary-dark);
+    color: var(--white);
+    padding: 80px 0 20px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 60px;
+}
+
+.footer-logo img {
+    height: 80px;
+    margin-bottom: 20px;
+}
+
+.footer-col h4 {
+    font-size: 18px;
+    margin-bottom: 25px;
+    color: var(--primary);
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 12px;
+}
+
+.footer-col ul li a {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    font-size: 14px;
+    transition: var(--transition);
+}
+
+.footer-col ul li a:hover {
+    color: var(--primary);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 20px;
+    text-align: center;
+    font-size: 12px;
+    color: rgba(255,255,255,0.5);
+}
+
+/* --- Animations --- */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Fixed Contact --- */
+.fixed-contact {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 9999;
+}
+
+.contact-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: var(--transition);
+    position: relative;
+}
+
+.contact-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+    box-shadow: 0 0 0 0 rgba(205, 162, 110, 0.7);
+    animation: ripple 2s infinite;
+}
+
+.contact-btn.zalo::before {
+    box-shadow: 0 0 0 0 rgba(33, 150, 243, 0.7);
+}
+
+@keyframes ripple {
+    0% {
+        box-shadow: 0 0 0 0 rgba(205, 162, 110, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 20px rgba(205, 162, 110, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(205, 162, 110, 0);
+    }
+}
+
+.contact-btn.zalo::before {
+    animation: ripple-zalo 2s infinite;
+}
+
+@keyframes ripple-zalo {
+    0% {
+        box-shadow: 0 0 0 0 rgba(33, 150, 243, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 20px rgba(33, 150, 243, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(33, 150, 243, 0);
+    }
+}
+
+.contact-btn img {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+}
+
+.contact-btn.call {
+    background: var(--primary);
+}
+
+.contact-btn.zalo {
+    background: linear-gradient(135deg, #2196F3, #1976D2);
+    border: none;
+}
+
+.contact-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Ringing Animation */
+.ring-anim {
+    animation: ring 1.2s infinite;
+}
+
+@keyframes ring {
+    0% { transform: scale(1) rotate(0); }
+    10% { transform: scale(1.1) rotate(-10deg); }
+    20% { transform: scale(1.1) rotate(10deg); }
+    30% { transform: scale(1.1) rotate(-10deg); }
+    40% { transform: scale(1.1) rotate(10deg); }
+    50% { transform: scale(1) rotate(0); }
+    100% { transform: scale(1) rotate(0); }
+}
+
+/* --- Mobile --- */
+@media (max-width: 992px) {
+    .overview-grid, .location-content, .footer-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero h1 {
+        font-size: 48px;
+    }
+    
+    nav {
+        display: none;
+    }
+}
