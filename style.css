@@ -842,11 +842,31 @@ footer {
         grid-template-columns: 1fr;
     }
     
+    .hero {
+        background-attachment: scroll;
+    }
+    
     .hero h1 {
         font-size: 48px;
     }
     
     nav {
         display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 36px;
+    }
+    
+    .hero p {
+        font-size: 14px;
+        margin-bottom: 30px;
+    }
+    
+    .hero .btn-group {
+        flex-direction: column;
+        gap: 15px;
     }
 }
