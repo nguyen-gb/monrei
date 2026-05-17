@@ -6,6 +6,41 @@ document.addEventListener('DOMContentLoaded', () => {
     const header = document.querySelector('header');
     const scrollRevealElements = document.querySelectorAll('.reveal');
 
+    // Fetch dynamic contact info from env (via API)
+    fetch('/api/config')
+        .then(res => res.json())
+        .then(data => {
+            const { email, phone } = data;
+            if (email && phone) {
+                const formattedPhone = phone.replace(/(\d{4})(\d{3})(\d{3})/, '$1.$2.$3');
+                
+                const headerPhoneBtn = document.getElementById('header-phone-btn');
+                const headerPhoneText = document.getElementById('header-phone-text');
+                if (headerPhoneBtn && headerPhoneText) {
+                    headerPhoneBtn.href = 'tel:' + phone;
+                    headerPhoneText.textContent = formattedPhone;
+                }
+                
+                const footerEmail = document.getElementById('footer-email');
+                if (footerEmail) {
+                    footerEmail.href = 'mailto:' + email;
+                    footerEmail.textContent = email;
+                }
+                
+                const footerPhone = document.getElementById('footer-phone');
+                if (footerPhone) {
+                    footerPhone.href = 'tel:' + phone;
+                    footerPhone.textContent = formattedPhone;
+                }
+                
+                const fixedCallBtn = document.getElementById('fixed-call-btn');
+                const fixedZaloBtn = document.getElementById('fixed-zalo-btn');
+                if (fixedCallBtn) fixedCallBtn.href = 'tel:' + phone;
+                if (fixedZaloBtn) fixedZaloBtn.href = 'https://zalo.me/' + phone;
+            }
+        })
+        .catch(err => console.error('Error fetching contact info:', err));
+
     // Header scroll effect
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
